@@ -1,0 +1,5 @@
+
+8kotlin:S6615" Remove this useless initializer.(„‘ŸÑ
+Qkotlin:S1481"4Remove this unused "inferredNonNull" local variable.(óÝä¥øÿÿÿÿ
+\kotlin:S6529"DReplace null check and collection size check with "!isNullOrEmpty()"(ºš…Ú
+Ykotlin:S6510"AMove "return" statements from all branches before "if" statement.(ºš…Ú
