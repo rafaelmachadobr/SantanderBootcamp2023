@@ -17,9 +17,9 @@ O Bootcamp Santander 2023 é um programa de bolsas de estudo promovido pelo Sant
 ### Conhecendo a Linguagem de Programação Kotlin
 
 - [x] Introdução Prática à Linguagem de Programação Kotlin
-- [ ] Estruturas de Controle de Fluxo e Coleções em Kotlin
-- [ ] Orientação a Objetos e Tipos de Classes na Prática com Kotlin
-- [ ] O Poder das Funções em Kotlin
+- [x] Estruturas de Controle de Fluxo e Coleções em Kotlin
+- [x] Orientação a Objetos e Tipos de Classes na Prática com Kotlin
+- [x] O Poder das Funções em Kotlin
 - [ ] Tratamento de Exceções em Kotlin
 
 ### Introdução ao Desenvolvimento Mobile com Kotlin

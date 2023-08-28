@@ -11,3 +11,23 @@ V
 &src/main/kotlin/introducao/OlaMundo.kt,b\a\ba7a39fbff7f4b690a84fa06744034a613d72139
 W
 'src/main/kotlin/introducao/Variaveis.kt,2\3\23b9604389905e504d9e943808ed2ea083ab6124
+P
+ src/main/kotlin/colecoes/List.kt,1\a\1aec66fd259cd50a8fb5b94605b5ce4659e4aa5f
+O
+src/main/kotlin/colecoes/Set.kt,3\c\3cd5d97afa43eefe840ba4779c729b701a34051d
+O
+src/main/kotlin/colecoes/Map.kt,1\1\11eba2e3fadc18d520b0dc92caab93052b14d6a5
+Z
+*src/main/kotlin/colecoes/FilterFunction.kt,4\f\4f470a0beddfda5ccea9e3aa90f4f8a64edfdea4
+W
+'src/main/kotlin/colecoes/MapFunction.kt,a\1\a19d5555fa77e784ee39b1e9fa6ed9d85ae9aae4
+N
+src/main/kotlin/poo/Heranca.kt,f\5\f5fa56dcb40bd79c51949c5f6cdb1060dfec8cc2
+R
+"src/main/kotlin/poo/DataClasses.kt,4\0\40365b2f6e2f553ab3bae0d0a8d85991857e43b5
+R
+"src/main/kotlin/poo/EnumClasses.kt,7\d\7d244e162b675d90d59ee9f1f4dc6aedcef2685f
+T
+$src/main/kotlin/poo/SealedClasses.kt,a\6\a6052c4aafb0abd82e8c02abcc36146192619b37
+T
+$src/main/kotlin/poo/ObjectKeyword.kt,b\7\b746a3836ae1742f29892f4220b3991a8f558399
