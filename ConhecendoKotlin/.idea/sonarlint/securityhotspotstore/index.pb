@@ -31,3 +31,13 @@ T
 $src/main/kotlin/poo/SealedClasses.kt,a\6\a6052c4aafb0abd82e8c02abcc36146192619b37
 T
 $src/main/kotlin/poo/ObjectKeyword.kt,b\7\b746a3836ae1742f29892f4220b3991a8f558399
+T
+$src/main/kotlin/funcoesescopo/Let.kt,3\8\38d3764ffc8a5e9eb5e6ecd162fbe14310337395
+T
+$src/main/kotlin/funcoesescopo/Run.kt,2\8\28838717bd2cd6dd9718824e288dc9664b67a8e1
+U
+%src/main/kotlin/funcoesescopo/With.kt,5\3\53c7030f291238dd654c02b2793e700616bb19d4
+V
+&src/main/kotlin/funcoesescopo/Apply.kt,b\5\b51b0102c2666cefdaa694b369dd67f1a3badd98
+U
+%src/main/kotlin/funcoesescopo/Also.kt,f\5\f5102a2bd560f471ff67d8bdaa6a8ef11b0721fb
