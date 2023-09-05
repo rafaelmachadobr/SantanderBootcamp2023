@@ -195,7 +195,24 @@
                 android:layout_height="wrap_content"
                 android:text="@string/hamburguer"
         />
-
     </RadioGroup>
+
+    <CheckBox
+            android:id="@+id/cb_pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pizza"
+            app:layout_constraintStart_toStartOf="@+id/rg_comida_favorita"
+            app:layout_constraintTop_toBottomOf="@+id/rg_comida_favorita"
+    />
+
+    <CheckBox
+            android:id="@+id/cb_hamburguer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hamburguer"
+            app:layout_constraintTop_toBottomOf="@+id/cb_pizza"
+            app:layout_constraintStart_toStartOf="@+id/cb_pizza"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
