@@ -135,7 +135,7 @@
             android:ems="10"
             android:layout_margin="16dp"
             android:hint="@string/preco_kwh"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:maxLength="10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -148,7 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:maxLength="10"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             android:hint="@string/km_percorrido"
             app:layout_constraintEnd_toEndOf="@+id/et_preco_kwh"
             app:layout_constraintStart_toStartOf="@+id/et_preco_kwh"
@@ -166,72 +166,23 @@
             app:layout_constraintTop_toBottomOf="@+id/et_km_percorrido"/>
 
     <TextView
-            android:id="@+id/tv_selecione_comida_favorita"
+            android:id="@+id/tv_resultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:text="@string/selecione_a_sua_comida_favorita"
             app:layout_constraintStart_toStartOf="@+id/btn_calcular"
             app:layout_constraintTop_toBottomOf="@+id/btn_calcular"
     />
 
-    <RadioGroup
-            android:id="@+id/rg_comida_favorita"
+    <TextView
+            android:id="@+id/tv_selecione_comida_favorita"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="@+id/tv_selecione_comida_favorita"
-            app:layout_constraintTop_toBottomOf="@+id/tv_selecione_comida_favorita">
-
-        <RadioButton
-                android:id="@+id/rb_pizza"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pizza"
-        />
-        <RadioButton
-                android:id="@+id/rb_hamburguer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hamburguer"
-        />
-    </RadioGroup>
-
-    <CheckBox
-            android:id="@+id/cb_compromisso_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/meu_compromisso_1"
-            app:layout_constraintStart_toStartOf="@+id/rg_comida_favorita"
-            app:layout_constraintTop_toBottomOf="@+id/rg_comida_favorita"
-    />
-
-    <CheckBox
-            android:id="@+id/cb_compromisso_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/meu_compromisso_2"
-            app:layout_constraintTop_toBottomOf="@+id/cb_compromisso_1"
-            app:layout_constraintStart_toStartOf="@+id/cb_compromisso_1"
-    />
-
-    <Switch
-            android:id="@+id/s_lampada"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ligar_lampada"
-            app:layout_constraintStart_toStartOf="@+id/cb_compromisso_2"
-            app:layout_constraintTop_toBottomOf="@+id/cb_compromisso_2"
-    />
-
-    <Spinner
-            android:id="@+id/sp_cidades"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/array_cidades"
-            app:layout_constraintStart_toStartOf="@+id/s_lampada"
-            app:layout_constraintTop_toBottomOf="@+id/s_lampada"
+            android:visibility="gone"
+            android:text="@string/selecione_a_sua_comida_favorita"
+            app:layout_constraintStart_toStartOf="@+id/btn_calcular"
+            app:layout_constraintTop_toBottomOf="@+id/btn_calcular"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
