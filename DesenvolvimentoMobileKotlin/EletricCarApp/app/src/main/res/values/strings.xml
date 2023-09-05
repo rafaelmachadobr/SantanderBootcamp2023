@@ -16,4 +16,16 @@
     <string name="meu_compromisso_1">Meu compromisso 1</string>
     <string name="meu_compromisso_2">Meu compromisso 2</string>
     <string name="ligar_lampada">Ligar lampada?</string>
+    
+    <string-array name="array_cidades">
+        <item>São Paulo</item>
+        <item>Rio de Janeiro</item>
+        <item>Salvador</item>
+        <item>Curitiba</item>
+        <item>Porto Alegre</item>
+        <item>Manaus</item>
+        <item>Fortaleza</item>
+        <item>Brasília</item>
+        <item>Belo Horizonte</item>
+    </string-array>
 </resources>

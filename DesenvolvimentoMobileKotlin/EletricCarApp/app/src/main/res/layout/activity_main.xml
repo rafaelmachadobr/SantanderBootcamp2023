@@ -44,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:visibility="gone"
             app:layout_constraintTop_toBottomOf="@+id/tv_carros"
             app:layout_constraintLeft_toLeftOf="@+id/tv_titulo"
             android:src="@drawable/eletric_car"
@@ -222,6 +223,15 @@
             android:text="@string/ligar_lampada"
             app:layout_constraintStart_toStartOf="@+id/cb_compromisso_2"
             app:layout_constraintTop_toBottomOf="@+id/cb_compromisso_2"
+    />
+
+    <Spinner
+            android:id="@+id/sp_cidades"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/array_cidades"
+            app:layout_constraintStart_toStartOf="@+id/s_lampada"
+            app:layout_constraintTop_toBottomOf="@+id/s_lampada"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
