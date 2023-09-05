@@ -198,21 +198,30 @@
     </RadioGroup>
 
     <CheckBox
-            android:id="@+id/cb_pizza"
+            android:id="@+id/cb_compromisso_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/pizza"
+            android:text="@string/meu_compromisso_1"
             app:layout_constraintStart_toStartOf="@+id/rg_comida_favorita"
             app:layout_constraintTop_toBottomOf="@+id/rg_comida_favorita"
     />
 
     <CheckBox
-            android:id="@+id/cb_hamburguer"
+            android:id="@+id/cb_compromisso_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hamburguer"
-            app:layout_constraintTop_toBottomOf="@+id/cb_pizza"
-            app:layout_constraintStart_toStartOf="@+id/cb_pizza"
+            android:text="@string/meu_compromisso_2"
+            app:layout_constraintTop_toBottomOf="@+id/cb_compromisso_1"
+            app:layout_constraintStart_toStartOf="@+id/cb_compromisso_1"
+    />
+
+    <Switch
+            android:id="@+id/s_lampada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ligar_lampada"
+            app:layout_constraintStart_toStartOf="@+id/cb_compromisso_2"
+            app:layout_constraintTop_toBottomOf="@+id/cb_compromisso_2"
     />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

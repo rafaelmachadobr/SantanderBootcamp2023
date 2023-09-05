@@ -13,4 +13,7 @@
     <string name="pizza">Pizza</string>
     <string name="hamburguer">Hamburguer</string>
     <string name="selecione_a_sua_comida_favorita">Selecione a sua comida favorita:</string>
+    <string name="meu_compromisso_1">Meu compromisso 1</string>
+    <string name="meu_compromisso_2">Meu compromisso 2</string>
+    <string name="ligar_lampada">Ligar lampada?</string>
 </resources>
