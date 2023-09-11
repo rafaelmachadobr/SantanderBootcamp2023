@@ -16,7 +16,8 @@
     <string name="meu_compromisso_1">Meu compromisso 1</string>
     <string name="meu_compromisso_2">Meu compromisso 2</string>
     <string name="ligar_lampada">Ligar lampada?</string>
-    
+    <string name="calcular_autonomia">Calcular Autonomia</string>
+
     <string-array name="array_cidades">
         <item>São Paulo</item>
         <item>Rio de Janeiro</item>
