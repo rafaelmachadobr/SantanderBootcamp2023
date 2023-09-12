@@ -6,11 +6,12 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import br.com.rafael.eletriccarapp.presentation.CalculadoraAutonomiaActivity
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnCalcular: Button
-    lateinit var lista: ListView
+    lateinit var listaCarros: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,13 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     fun setupView() {
         btnCalcular = findViewById(R.id.btn_calcular)
-        lista = findViewById(R.id.lv_informacoes)
+        listaCarros = findViewById(R.id.rv_lista_carros)
     }
 
     fun setupList() {
         var dados = arrayOf("Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dados)
-        lista.adapter = adapter
+//        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, dados)
+//        lista.adapter = adapter
     }
 
     fun setupListeners() {
