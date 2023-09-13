@@ -22,6 +22,22 @@ class MainActivity : AppCompatActivity() {
         setupList()
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+    }
+
     fun setupView() {
         btnCalcular = findViewById(R.id.btn_calcular)
         listaCarros = findViewById(R.id.rv_lista_carros)
