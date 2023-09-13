@@ -11,9 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.rafael.eletriccarapp.R
 import br.com.rafael.eletriccarapp.data.CarFactory
 import br.com.rafael.eletriccarapp.ui.adapter.CarAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class CarFragment : Fragment() {
-    lateinit var btnCalcular: Button
+    lateinit var fabCalcular: FloatingActionButton
     lateinit var listaCarros: RecyclerView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -24,11 +25,12 @@ class CarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView(view)
         setupList()
+        setupListeners()
     }
 
     fun setupView(view: View) {
         view.apply {
-            btnCalcular = findViewById(R.id.btn_calcular)
+            fabCalcular = findViewById(R.id.fab_calcular)
             listaCarros = findViewById(R.id.rv_lista_carros)
         }
     }
@@ -39,8 +41,8 @@ class CarFragment : Fragment() {
     }
 
     fun setupListeners() {
-        btnCalcular.setOnClickListener {
-//            startActivity(Intent(this, CalculadoraAutonomiaActivity::class.java))
+        fabCalcular.setOnClickListener {
+            startActivity(Intent(context, CalculadoraAutonomiaActivity::class.java))
         }
     }
 }
