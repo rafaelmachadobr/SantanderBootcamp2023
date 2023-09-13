@@ -4,10 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.rafael.eletriccarapp.presentation.CalculadoraAutonomiaActivity
-import br.com.rafael.eletriccarapp.presentation.adapter.CarAdapter
+import br.com.rafael.eletriccarapp.data.CarFactory
+import br.com.rafael.eletriccarapp.ui.CalculadoraAutonomiaActivity
+import br.com.rafael.eletriccarapp.ui.adapter.CarAdapter
 
 class MainActivity : AppCompatActivity() {
     lateinit var btnCalcular: Button
@@ -28,8 +28,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setupList() {
-        var dados = arrayOf("Cupcake", "Donut", "Eclair", "Froyo", "Gingerbread", "Honeycomb")
-        val adapter = CarAdapter(dados)
+        val adapter = CarAdapter(CarFactory.list)
         listaCarros.adapter = adapter
     }
 
