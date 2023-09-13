@@ -6,6 +6,28 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+    <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+    >
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_carros"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/carros"/>
+
+        <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab_favoritos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/favoritos"/>
+    </com.google.android.material.tabs.TabLayout>
+
     <TextView
             android:id="@+id/tv_titulo"
             android:layout_width="wrap_content"
@@ -16,31 +38,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
     />
-
-    <TextView
-            android:id="@+id/tv_carros"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/carros"
-            android:textStyle="bold"
-            android:layout_margin="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
-            style="@style/TextAppearance.AppCompat.Body2"
-    />
-
-    <TextView
-            android:id="@+id/tv_favoritos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/favoritos"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/tv_carros"
-            app:layout_constraintTop_toTopOf="@+id/tv_carros"
-            android:layout_marginLeft="16dp"
-            style="@style/TextAppearance.AppCompat.Body2"
-    />
-
 
     <Button
             android:id="@+id/btn_calcular"
@@ -60,7 +57,7 @@
             app:layout_constraintBottom_toTopOf="@id/btn_calcular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_carros"
+            app:layout_constraintTop_toBottomOf="@id/tab_layout"
             tools:listitem="@layout/carro_item"
     />
 
