@@ -25,12 +25,14 @@ class MainActivity : AppCompatActivity() {
         setupView()
         setupListeners()
         setupList()
+        setupTabs()
     }
 
     fun setupView() {
         tabLayout = findViewById(R.id.tab_layout)
         btnCalcular = findViewById(R.id.btn_calcular)
         listaCarros = findViewById(R.id.rv_lista_carros)
+        viewPager = findViewById(R.id.vp_view_pager)
     }
 
     fun setupList() {
@@ -47,5 +49,18 @@ class MainActivity : AppCompatActivity() {
         btnCalcular.setOnClickListener {
             startActivity(Intent(this, CalculadoraAutonomiaActivity::class.java))
         }
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.let { viewPager.currentItem = it.position }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // Não faz nada
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                // Não faz nada
+            }
+        })
     }
 }
