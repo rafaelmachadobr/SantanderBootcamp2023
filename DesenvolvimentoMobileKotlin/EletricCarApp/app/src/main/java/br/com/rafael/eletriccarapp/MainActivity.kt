@@ -13,8 +13,6 @@ import br.com.rafael.eletriccarapp.ui.adapter.TabsAdapter
 import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
-    lateinit var btnCalcular: Button
-    lateinit var listaCarros: RecyclerView
     lateinit var tabLayout: TabLayout
     lateinit var viewPager: ViewPager2
 
@@ -23,43 +21,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupView()
-        setupListeners()
-        setupList()
         setupTabs()
     }
 
     fun setupView() {
         tabLayout = findViewById(R.id.tab_layout)
-        btnCalcular = findViewById(R.id.btn_calcular)
-        listaCarros = findViewById(R.id.rv_lista_carros)
         viewPager = findViewById(R.id.vp_view_pager)
-    }
-
-    fun setupList() {
-        val adapter = CarAdapter(CarFactory.list)
-        listaCarros.adapter = adapter
     }
 
     fun setupTabs() {
         val tabsAdapter = TabsAdapter(this)
         viewPager.adapter = tabsAdapter
-    }
-
-    fun setupListeners() {
-        btnCalcular.setOnClickListener {
-            startActivity(Intent(this, CalculadoraAutonomiaActivity::class.java))
-        }
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 tab?.let { viewPager.currentItem = it.position }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                // Não faz nada
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                // Não faz nada
+            }
+        })
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                tabLayout.getTabAt(position)?.select()
             }
         })
     }
