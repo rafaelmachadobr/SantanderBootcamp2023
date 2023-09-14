@@ -1,24 +1,19 @@
 package br.com.rafael.eletriccarapp.ui
 
-import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.rafael.eletriccarapp.R
 import br.com.rafael.eletriccarapp.data.CarFactory
+import br.com.rafael.eletriccarapp.domain.Carro
 import br.com.rafael.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
-import org.json.JSONObject
 import org.json.JSONTokener
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -92,6 +87,9 @@ class CarFragment : Fragment() {
                     val bateria = jsonArray.getJSONObject(i).getString("bateria")
                     val potencia = jsonArray.getJSONObject(i).getString("potencia")
                     val recarga = jsonArray.getJSONObject(i).getString("recarga")
+                    val url = jsonArray.getJSONObject(i).getString("url")
+
+                    var model = Carro(id, preco, bateria, potencia, recarga, url)
                 }
 
             } catch (ex: Exception) {
