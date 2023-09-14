@@ -1,5 +1,6 @@
 package br.com.rafael.eletriccarapp.ui
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +9,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.rafael.eletriccarapp.R
-import br.com.rafael.eletriccarapp.data.CarFactory
 import br.com.rafael.eletriccarapp.domain.Carro
 import br.com.rafael.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -21,14 +21,16 @@ class CarFragment : Fragment() {
     lateinit var fabCalcular: FloatingActionButton
     lateinit var listaCarros: RecyclerView
 
+    var carrosArray: ArrayList<Carro> = ArrayList()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.car_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        callService()
         setupView(view)
-        setupList()
         setupListeners()
     }
 
@@ -40,15 +42,19 @@ class CarFragment : Fragment() {
     }
 
     fun setupList() {
-        val adapter = CarAdapter(CarFactory.list)
+        val adapter = CarAdapter(carrosArray)
         listaCarros.adapter = adapter
     }
 
     fun setupListeners() {
         fabCalcular.setOnClickListener {
-            MyTask().execute("https://igorbag.github.io/cars-api/cars.json")
-//            startActivity(Intent(context, CalculadoraAutonomiaActivity::class.java))
+            startActivity(Intent(context, CalculadoraAutonomiaActivity::class.java))
         }
+    }
+
+    fun callService() {
+        val urlBase = "https://igorbag.github.io/cars-api/cars.json"
+        MyTask().execute(urlBase)
     }
 
     inner class MyTask : AsyncTask<String, String, String>() {
@@ -82,16 +88,18 @@ class CarFragment : Fragment() {
                 val jsonArray = JSONTokener(values[0]).nextValue() as JSONArray
 
                 for (i in 0 until jsonArray.length()) {
-                    val id = jsonArray.getJSONObject(i).getInt("id")
+                    val id = jsonArray.getJSONObject(i).getString("id")
                     val preco = jsonArray.getJSONObject(i).getString("preco")
                     val bateria = jsonArray.getJSONObject(i).getString("bateria")
                     val potencia = jsonArray.getJSONObject(i).getString("potencia")
                     val recarga = jsonArray.getJSONObject(i).getString("recarga")
-                    val url = jsonArray.getJSONObject(i).getString("url")
+                    val urlPhoto = jsonArray.getJSONObject(i).getString("urlPhoto")
 
-                    var model = Carro(id, preco, bateria, potencia, recarga, url)
+                    val model = Carro(id.toInt(), preco, bateria, potencia, recarga, urlPhoto)
+                    carrosArray.add(model)
                 }
 
+                setupList()
             } catch (ex: Exception) {
                 ex.printStackTrace()
             }
