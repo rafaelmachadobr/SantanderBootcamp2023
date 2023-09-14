@@ -71,9 +71,17 @@ class CarFragment : Fragment() {
                 urlConnection = urlBase.openConnection() as HttpURLConnection
                 urlConnection.connectTimeout = 60000
                 urlConnection.readTimeout = 60000
+                urlConnection.setRequestProperty("Accept", "application/json")
 
-                var response = urlConnection.inputStream.bufferedReader().use { it.readText() }
-                publishProgress(response)
+                val responseCode = urlConnection.responseCode
+
+                if (responseCode == HttpURLConnection.HTTP_OK) {
+                    val response = urlConnection.inputStream.bufferedReader().use { it.readText() }
+                    publishProgress(response)
+                } else {
+                    println("Erro na requisição")
+                }
+
             } catch (ex: Exception) {
                 ex.printStackTrace()
             } finally {
