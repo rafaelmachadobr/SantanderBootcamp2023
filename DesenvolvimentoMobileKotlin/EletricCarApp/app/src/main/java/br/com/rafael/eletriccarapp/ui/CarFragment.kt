@@ -13,7 +13,9 @@ import br.com.rafael.eletriccarapp.R
 import br.com.rafael.eletriccarapp.data.CarFactory
 import br.com.rafael.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import org.json.JSONArray
 import org.json.JSONObject
+import org.json.JSONTokener
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -49,7 +51,8 @@ class CarFragment : Fragment() {
 
     fun setupListeners() {
         fabCalcular.setOnClickListener {
-            startActivity(Intent(context, CalculadoraAutonomiaActivity::class.java))
+            MyTask().execute("https://igorbag.github.io/cars-api/cars.json")
+//            startActivity(Intent(context, CalculadoraAutonomiaActivity::class.java))
         }
     }
 
@@ -68,9 +71,8 @@ class CarFragment : Fragment() {
                 urlConnection.connectTimeout = 60000
                 urlConnection.readTimeout = 60000
 
-                var inString = streamToString(urlConnection.inputStream)
-
-                publishProgress(inString)
+                var response = urlConnection.inputStream.bufferedReader().use { it.readText() }
+                publishProgress(response)
             } catch (ex: Exception) {
                 ex.printStackTrace()
             } finally {
@@ -82,34 +84,19 @@ class CarFragment : Fragment() {
 
         override fun onProgressUpdate(vararg values: String?) {
             try {
-                var json : JSONObject
-                values[0]?.let {
-                    json = JSONObject(it)
+                val jsonArray = JSONTokener(values[0]).nextValue() as JSONArray
+
+                for (i in 0 until jsonArray.length()) {
+                    val id = jsonArray.getJSONObject(i).getInt("id")
+                    val preco = jsonArray.getJSONObject(i).getString("preco")
+                    val bateria = jsonArray.getJSONObject(i).getString("bateria")
+                    val potencia = jsonArray.getJSONObject(i).getString("potencia")
+                    val recarga = jsonArray.getJSONObject(i).getString("recarga")
                 }
 
             } catch (ex: Exception) {
                 ex.printStackTrace()
             }
-        }
-
-        fun streamToString(inputStream: InputStream): String {
-            val bufferReader = BufferedReader(InputStreamReader(inputStream))
-            var line: String
-            var result = ""
-
-            try {
-                do {
-                    line = bufferReader.readLine()
-                    line?.let {
-                        result += line
-                    }
-                } while (line != null)
-                inputStream.close()
-            } catch (ex: Exception) {
-                ex.printStackTrace()
-            }
-
-            return result
         }
     }
 }
