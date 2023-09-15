@@ -10,7 +10,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import br.com.rafael.eletriccarapp.R
@@ -26,6 +29,8 @@ class CarFragment : Fragment() {
     lateinit var fabCalcular: FloatingActionButton
     lateinit var listaCarros: RecyclerView
     lateinit var progress: ProgressBar
+    lateinit var noInternetImage: ImageView
+    lateinit var noInternetText: TextView
 
     var carrosArray: ArrayList<Carro> = ArrayList()
 
@@ -37,8 +42,22 @@ class CarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupView(view)
         setupListeners()
-        checkForInternet(context)
-        callService()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (checkForInternet(context)) {
+            callService()
+        } else {
+            emptyState()
+        }
+    }
+
+    fun emptyState() {
+        progress.isVisible = false
+        listaCarros.isVisible = false
+        noInternetImage.isVisible = true
+        noInternetText.isVisible = true
     }
 
     fun setupView(view: View) {
@@ -46,13 +65,15 @@ class CarFragment : Fragment() {
             fabCalcular = findViewById(R.id.fab_calcular)
             listaCarros = findViewById(R.id.rv_lista_carros)
             progress = findViewById(R.id.pb_loader)
+            noInternetImage = findViewById(R.id.iv_empty_state)
+            noInternetText = findViewById(R.id.tv_no_wifi)
         }
     }
 
     fun setupList() {
         val carroAdapter = CarAdapter(carrosArray)
         listaCarros.apply {
-            visibility = View.VISIBLE
+            isVisible = true
             adapter = carroAdapter
         }
     }
@@ -65,6 +86,7 @@ class CarFragment : Fragment() {
 
     fun callService() {
         val urlBase = "https://igorbag.github.io/cars-api/cars.json"
+        progress.isVisible = true
         MyTask().execute(urlBase)
     }
 
@@ -138,7 +160,9 @@ class CarFragment : Fragment() {
                     val model = Carro(id.toInt(), preco, bateria, potencia, recarga, urlPhoto)
                     carrosArray.add(model)
                 }
-                progress.visibility = View.GONE
+                progress.isVisible = false
+                noInternetImage.isVisible = false
+                noInternetText.isVisible = false
                 setupList()
             } catch (ex: Exception) {
                 ex.printStackTrace()
