@@ -1,5 +1,6 @@
 package br.com.rafael.eletriccarapp.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -44,6 +45,16 @@ class CalculadoraAutonomiaActivity : AppCompatActivity() {
         val kmPercorrido = kmPercorrido.text.toString().toFloat()
         val result = preco / kmPercorrido
 
-        resultado.text = "R$ $result"
+        val numeroFormatado = String.format("R$ %.2f", result)
+        resultado.text = numeroFormatado
+        saveSharedPref(result)
+    }
+
+    fun saveSharedPref(resultado: Float) {
+        val sharedPref = getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit()) {
+            putFloat(getString(R.string.saved_calc), resultado)
+            apply()
+        }
     }
 }
