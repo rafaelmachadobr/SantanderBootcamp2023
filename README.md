@@ -20,18 +20,29 @@ O Bootcamp Santander 2023 é um programa de bolsas de estudo promovido pelo Sant
 - [x] Estruturas de Controle de Fluxo e Coleções em Kotlin
 - [x] Orientação a Objetos e Tipos de Classes na Prática com Kotlin
 - [x] O Poder das Funções em Kotlin
-- [ ] Tratamento de Exceções em Kotlin
+- [x] Tratamento de Exceções em Kotlin
 
 ### Introdução ao Desenvolvimento Mobile com Kotlin
 
-- [ ] Visão Geral do Mercado de Desenvolvimento Mobile
-- [ ] Instalando e Configurando o Android Studio
-- [ ] Entendendo a Estrutura e Depurando Apps Android
-- [ ] Princípios de Interface de Usuário e Layouts Android
-- [ ] Manipulando Entradas do Usuário em Apps Android
-- [ ] Fundamentos de Multiscreen em Apps Android
-- [ ] Noções Básicas de Rede em Apps Android com Kotlin
+- [x] Visão Geral do Mercado de Desenvolvimento Mobile
+- [x] Instalando e Configurando o Android Studio
+- [x] Entendendo a Estrutura e Depurando Apps Android
+- [x] Princípios de Interface de Usuário e Layouts Android
+- [x] Manipulando Entradas do Usuário em Apps Android
+- [x] Fundamentos de Multiscreen em Apps Android
+- [x] Noções Básicas de Rede em Apps Android com Kotlin
 - [ ] Armazenamento de Dados Essencial em Apps Android com Kotlin
+
+### Ganhando Produtividade com o Android Jetpack
+
+- [ ] Visão Geral Sobre o Android Jetpack
+- [ ] Explorando Componentes do Material Design em Apps Android
+- [ ] Gerenciando o Fluxo de Navegação de Apps Android
+- [ ] Ciclo de Vida Android ViewModel, LiveData e Coroutines
+- [ ] Simplificando a Persistência de Dados no Android com Room
+- [ ] Simplificando a Persistência de Dados no Android com Room
+- [ ] Injeção de Dependências no Android com Hilt
+- [ ] Interfaces de Usuário Dinâmicas no Android com Jetpack Compose
 
 ## Links Úteis
 
