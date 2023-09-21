@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import br.com.rafael.eletriccarapp.R
 import br.com.rafael.eletriccarapp.data.CarsApi
 import br.com.rafael.eletriccarapp.domain.Carro
-import br.com.rafael.eletriccarapp.local.CarRepository
+import br.com.rafael.eletriccarapp.data.local.CarRepository
 import br.com.rafael.eletriccarapp.ui.adapter.CarAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONArray
@@ -117,7 +117,7 @@ class CarFragment : Fragment() {
             adapter = carroAdapter
         }
         carroAdapter.carItemLister = { carro ->
-            val isSaved = CarRepository(requireContext()).save(carro)
+            val isSaved = CarRepository(requireContext()).saveIfNotExist(carro)
         }
     }
 
