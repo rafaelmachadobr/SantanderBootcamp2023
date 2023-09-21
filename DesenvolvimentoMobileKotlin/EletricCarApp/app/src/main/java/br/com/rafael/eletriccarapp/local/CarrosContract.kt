@@ -3,7 +3,7 @@ package br.com.rafael.eletriccarapp.local
 import android.provider.BaseColumns
 
 object CarrosContract {
-    object CarEntry: BaseColumns {
+    object CarEntry : BaseColumns {
         const val TABLE_NAME = "car"
         const val COLUMN_NAME_PRECO = "preco"
         const val COLUMN_NAME_BATERIA = "bateria"
