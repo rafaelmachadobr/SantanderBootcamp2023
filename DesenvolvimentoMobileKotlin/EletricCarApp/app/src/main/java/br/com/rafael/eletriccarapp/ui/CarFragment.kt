@@ -115,6 +115,9 @@ class CarFragment : Fragment() {
             isVisible = true
             adapter = carroAdapter
         }
+        carroAdapter.carItemLister = { carro ->
+            val bateria = carro.bateria
+        }
     }
 
     fun setupListeners() {
@@ -196,7 +199,7 @@ class CarFragment : Fragment() {
                     val recarga = jsonArray.getJSONObject(i).getString("recarga")
                     val urlPhoto = jsonArray.getJSONObject(i).getString("urlPhoto")
 
-                    val model = Carro(id.toInt(), preco, bateria, potencia, recarga, urlPhoto)
+                    val model = Carro(id.toInt(), preco, bateria, potencia, recarga, urlPhoto, false)
                     carrosArray.add(model)
                 }
                 progress.isVisible = false

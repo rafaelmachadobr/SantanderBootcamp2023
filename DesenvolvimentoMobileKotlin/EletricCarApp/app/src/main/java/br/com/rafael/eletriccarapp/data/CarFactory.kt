@@ -10,7 +10,8 @@ object CarFactory {
             "300 kWh",
             "200 cv",
             "30 min",
-            "https://www.google.com.br"
+            "https://www.google.com.br",
+            false
         ),
         Carro(
             2,
@@ -18,23 +19,8 @@ object CarFactory {
             "200 kWh",
             "150 cv",
             "20 min",
-            "https://www.google.com.br"
-        ),
-        Carro(
-            3,
-            "R$ 100.000,00",
-            "100 kWh",
-            "100 cv",
-            "10 min",
-            "https://www.google.com.br"
-        ),
-        Carro(
-            4,
-            "R$ 50.000,00",
-            "50 kWh",
-            "50 cv",
-            "5 min",
-            "https://www.google.com.br"
-        ),
+            "https://www.google.com.br",
+            true
+        )
     )
 }
