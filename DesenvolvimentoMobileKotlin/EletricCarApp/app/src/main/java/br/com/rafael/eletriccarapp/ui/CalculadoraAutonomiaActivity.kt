@@ -21,6 +21,12 @@ class CalculadoraAutonomiaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_calcular_autonomia)
         setupView()
         setupListeners()
+        setupCachedResult()
+    }
+
+    private fun setupCachedResult() {
+        val valorCalculado = getSharedPref()
+        resultado.text = String.format("R$ %.2f", valorCalculado)
     }
 
     fun setupView() {
@@ -56,5 +62,10 @@ class CalculadoraAutonomiaActivity : AppCompatActivity() {
             putFloat(getString(R.string.saved_calc), resultado)
             apply()
         }
+    }
+
+    fun getSharedPref(): Float {
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        return sharedPref.getFloat(getString(R.string.saved_calc), 0.0F)
     }
 }
