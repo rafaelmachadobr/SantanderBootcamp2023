@@ -1,7 +1,7 @@
 package br.com.rafael.androidmaterial
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import br.com.rafael.androidmaterial.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +27,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.cvBottomSheets.setOnClickListener {
             ModalBottomSheet.start(supportFragmentManager)
+        }
+
+        binding.cvTopAppBar.setOnClickListener {
+            startActivity(TopAppBarActivity.createIntent(this))
         }
     }
 }

@@ -12,4 +12,11 @@
     <string name="button_text">Button Text</string>
     <string name="label">Label</string>
     <string name="name">Name</string>
+    <string name="page_title">Page Title</string>
+    <string name="favorite">Favorite</string>
+    <string name="content_description_favorite">Descrição</string>
+    <string name="search">Search</string>
+    <string name="content_description_search">Descrição da pesquisa</string>
+    <string name="more">More</string>
+    <string name="content_description_more">Descrição de mais</string>
 </resources>
