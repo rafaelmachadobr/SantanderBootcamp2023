@@ -31,11 +31,11 @@ O Bootcamp Santander 2023 é um programa de bolsas de estudo promovido pelo Sant
 - [x] Manipulando Entradas do Usuário em Apps Android
 - [x] Fundamentos de Multiscreen em Apps Android
 - [x] Noções Básicas de Rede em Apps Android com Kotlin
-- [ ] Armazenamento de Dados Essencial em Apps Android com Kotlin
+- [x] Armazenamento de Dados Essencial em Apps Android com Kotlin
 
 ### Ganhando Produtividade com o Android Jetpack
 
-- [ ] Visão Geral Sobre o Android Jetpack
+- [x] Visão Geral Sobre o Android Jetpack
 - [ ] Explorando Componentes do Material Design em Apps Android
 - [ ] Gerenciando o Fluxo de Navegação de Apps Android
 - [ ] Ciclo de Vida Android ViewModel, LiveData e Coroutines
