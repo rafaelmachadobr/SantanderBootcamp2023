@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ButtonsActivity"/>
+        <activity android:name=".TextFieldsActivity"/>
     </application>
 
 </manifest>
