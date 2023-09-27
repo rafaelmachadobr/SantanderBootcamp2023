@@ -24,6 +24,7 @@
         <activity android:name=".ButtonsActivity"/>
         <activity android:name=".TextFieldsActivity"/>
         <activity android:name="br.com.rafael.androidmaterial.TopAppBarActivity"/>
+        <activity android:name="br.com.rafael.androidmaterial.BottomAppBarActivity"/>
     </application>
 
 </manifest>
