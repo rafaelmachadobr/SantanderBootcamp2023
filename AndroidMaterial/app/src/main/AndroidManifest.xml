@@ -25,6 +25,7 @@
         <activity android:name=".TextFieldsActivity"/>
         <activity android:name="br.com.rafael.androidmaterial.TopAppBarActivity"/>
         <activity android:name="br.com.rafael.androidmaterial.BottomAppBarActivity"/>
+        <activity android:name="br.com.rafael.androidmaterial.SnackBarActivity"/>
     </application>
 
 </manifest>

@@ -20,4 +20,6 @@
     <string name="more">More</string>
     <string name="content_description_more">Descrição de mais</string>
     <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="showing">Showing</string>
+    <string name="action">Action</string>
 </resources>

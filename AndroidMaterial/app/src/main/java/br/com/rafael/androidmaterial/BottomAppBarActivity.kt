@@ -41,6 +41,6 @@ class BottomAppBarActivity : AppCompatActivity() {
     }
 
     companion object {
-        fun getStartIntent(context: Context): Intent = Intent(context, BottomAppBarActivity::class.java)
+        fun createIntent(context: Context): Intent = Intent(context, BottomAppBarActivity::class.java)
     }
 }
