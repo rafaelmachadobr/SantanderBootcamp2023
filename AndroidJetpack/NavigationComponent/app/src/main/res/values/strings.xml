@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">NavigationComponent</string>
+    <string name="hint_name">Name</string>
+    <string name="hint_age">Age</string>
+    <string name="buttom_next">Next</string>
+    <string name="hint_street">Street</string>
+    <string name="hint_number">Number</string>
 </resources>

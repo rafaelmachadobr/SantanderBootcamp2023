@@ -7,6 +7,14 @@
             tools:layout="@layout/fragment_personal_data"
             android:id="@+id/personalDataFragment"
             android:name="br.com.rafael.navigationcomponent.fragments.PersonalDataFragment"
-            android:label="PersonalDataFragment"/>
+            android:label="PersonalDataFragment">
+
+        <action android:id="@+id/go_to_andressFragment" app:destination="@id/andressFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/andressFragment"
+              tools:layout="@layout/fragment_address"
+              android:name="br.com.rafael.navigationcomponent.fragments.AndressFragment"
+              android:label="AndressFragment"/>
 
 </navigation>

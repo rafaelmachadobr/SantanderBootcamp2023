@@ -5,19 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
-import br.com.rafael.navigationcomponent.R
+import br.com.rafael.navigationcomponent.databinding.FragmentAddressBinding
 import br.com.rafael.navigationcomponent.databinding.FragmentPersonalDataBinding
 import br.com.rafael.navigationcomponent.extensions.text
 import br.com.rafael.navigationcomponent.model.PersonModel
 
-class PersonalDataFragment : Fragment() {
+class AndressFragment : Fragment() {
 
-    private var _binding: FragmentPersonalDataBinding? = null
+    private var _binding: FragmentAddressBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, group: ViewGroup?, saved: Bundle?): View {
-        _binding = FragmentPersonalDataBinding.inflate(inflater, group, false)
+        _binding = FragmentAddressBinding.inflate(inflater, group, false)
         return binding.root
     }
 
@@ -26,11 +25,8 @@ class PersonalDataFragment : Fragment() {
 
         binding.btnNext.setOnClickListener {
             val model = PersonModel(
-                name = binding.tilName.text,
-                age = binding.tilAge.text.toInt()
-            )
-            findNavController().navigate(
-                R.id.go_to_andressFragment
+                street = binding.tilStreet.text,
+                number = binding.tilNumber.text.toInt()
             )
         }
     }
