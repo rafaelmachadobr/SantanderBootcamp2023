@@ -19,6 +19,18 @@
         <argument
                 android:name="model"
                 app:argType="br.com.rafael.navigationcomponent.model.PersonModel"/>
+        <action
+                android:id="@+id/go_to_resumeFragment"
+                app:destination="@id/resumeFragment"/>
+    </fragment>
+    <fragment
+            android:id="@+id/resumeFragment"
+            tools:layout="@layout/fragment_resume"
+            android:name="br.com.rafael.navigationcomponent.fragments.ResumeFragment"
+            android:label="ResumeFragment">
+        <argument
+                android:name="model"
+                app:argType="br.com.rafael.navigationcomponent.model.PersonModel"/>
     </fragment>
 
 </navigation>

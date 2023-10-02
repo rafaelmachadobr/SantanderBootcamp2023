@@ -8,32 +8,27 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import br.com.rafael.navigationcomponent.databinding.FragmentAddressBinding
+import br.com.rafael.navigationcomponent.databinding.FragmentResumeBinding
 import br.com.rafael.navigationcomponent.extensions.text
 import br.com.rafael.navigationcomponent.model.PersonModel
 
-class AndressFragment : Fragment() {
+class ResumeFragment: Fragment() {
 
-    private var _binding: FragmentAddressBinding? = null
+    private var _binding: FragmentResumeBinding? = null
     private val binding get() = _binding!!
 
-    private val args by navArgs<AndressFragmentArgs>()
+    private val args by navArgs<ResumeFragmentArgs>()
 
     override fun onCreateView(inflater: LayoutInflater, group: ViewGroup?, saved: Bundle?): View {
-        _binding = FragmentAddressBinding.inflate(inflater, group, false)
+        _binding = FragmentResumeBinding.inflate(inflater, group, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnNext.setOnClickListener {
-            val model = args.model.copy(
-                street = binding.tilStreet.text,
-                number = binding.tilNumber.text.toInt()
-            )
-            val directions = AndressFragmentDirections.goToResumeFragment(model)
-            findNavController().navigate(directions)
-        }
+        binding.tvPerson.text = args.model.person
+        binding.tvAddress.text = args.model.address
     }
 
     override fun onDestroyView() {

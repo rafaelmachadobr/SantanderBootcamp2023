@@ -1,6 +1,7 @@
 package br.com.rafael.navigationcomponent.model
 
 import android.os.Parcelable
+import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -9,4 +10,10 @@ data class PersonModel(
     val age: Int = 0,
     val street: String = "",
     val number: Int = 0,
-) : Parcelable
+) : Parcelable {
+    @IgnoredOnParcel
+    val person = "$name $age"
+
+    @IgnoredOnParcel
+    val address = "$street - $number"
+}
