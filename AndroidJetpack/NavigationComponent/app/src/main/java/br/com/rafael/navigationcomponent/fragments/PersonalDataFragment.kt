@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import br.com.rafael.navigationcomponent.R
 import br.com.rafael.navigationcomponent.databinding.FragmentPersonalDataBinding
 import br.com.rafael.navigationcomponent.extensions.text
 import br.com.rafael.navigationcomponent.model.PersonModel
@@ -26,12 +25,10 @@ class PersonalDataFragment : Fragment() {
 
         binding.btnNext.setOnClickListener {
             val model = PersonModel(
-                name = binding.tilName.text,
-                age = binding.tilAge.text.toInt()
+                name = binding.tilName.text, age = binding.tilAge.text.toInt()
             )
-            findNavController().navigate(
-                R.id.go_to_andressFragment
-            )
+            val directions = PersonalDataFragmentDirections.goToAndressFragment(model)
+            findNavController().navigate(directions)
         }
     }
 

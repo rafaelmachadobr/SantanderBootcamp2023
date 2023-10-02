@@ -15,6 +15,10 @@
     <fragment android:id="@+id/andressFragment"
               tools:layout="@layout/fragment_address"
               android:name="br.com.rafael.navigationcomponent.fragments.AndressFragment"
-              android:label="AndressFragment"/>
+              android:label="AndressFragment">
+        <argument
+                android:name="model"
+                app:argType="br.com.rafael.navigationcomponent.model.PersonModel"/>
+    </fragment>
 
 </navigation>
