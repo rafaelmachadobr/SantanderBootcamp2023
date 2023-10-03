@@ -9,4 +9,10 @@
             android:name="br.com.rafael.eletriccarapp.ui.CarFragment"
             android:label="CarFragment"/>
 
+    <fragment
+            tools:layout="@layout/favorite_fragment"
+            android:id="@+id/favoriteFragment"
+            android:name="br.com.rafael.eletriccarapp.ui.FavoriteFragment"
+            android:label="FavoriteFragment"/>
+
 </navigation>
